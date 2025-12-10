@@ -1,4 +1,4 @@
-import 'package:heyden_site/homepage.dart';
+import 'package:heyden_site/pages/homepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
