@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:heyden_site/widgets/appbar.dart';
 import 'package:heyden_site/widgets/biocard.dart';
+import 'package:heyden_site/widgets/sizedtext.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -44,7 +45,9 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           circularPicture,
-          const Text('Henry Heyden'),
+          sizedText('Henry Heyden', size: 40),
+          sizedText('[ˈhɛnɹi ˈhe͡ɪdⁿ]'),
+          sizedText('hheyden [æt̚] macalester [dɑt̚] edu', size: 14),
         ],
       )
     );
