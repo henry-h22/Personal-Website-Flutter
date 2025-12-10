@@ -124,3 +124,4 @@ macos/Flutter/Flutter-Debug.xcconfig
 macos/Flutter/Flutter-Release.xcconfig
 macos/Podfile
 /ios
+.DS_Store
