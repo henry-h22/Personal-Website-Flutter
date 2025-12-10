@@ -17,19 +17,21 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: appBar(Theme.of(context).colorScheme.inversePrimary, widget.title),
-      body: Row(
-        children: <Widget>[
-          Expanded(
-            flex: 1,
-            child: sideBar(context)
-          ),
-          Expanded(
-            flex: 3,
-            child: mainBody(context)
-          )
-        ],
+    return SelectionArea(
+      child: Scaffold(
+        appBar: appBar(Theme.of(context).colorScheme.inversePrimary, widget.title),
+        body: Row(
+          children: <Widget>[
+            Expanded(
+              flex: 1,
+              child: sideBar(context)
+            ),
+            Expanded(
+              flex: 3,
+              child: mainBody(context)
+            )
+          ],
+        )
       )
     );
   }
