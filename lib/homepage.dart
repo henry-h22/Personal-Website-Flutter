@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final Widget circularPicture = CircleAvatar(
-    radius: 70,
+    radius: 122,
     backgroundImage: AssetImage('assets/images/profpic1.jpg'),
   );
 
