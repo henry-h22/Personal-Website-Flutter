@@ -35,11 +35,11 @@ class _HomePageState extends State<HomePage> {
 
   Widget sideBar(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(22.0),
       color: Theme.of(context).focusColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          const SizedBox(height: 22),
           circularPicture,
           const Text('Henry Heyden'),
         ],
