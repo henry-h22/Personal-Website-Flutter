@@ -7,6 +7,7 @@ PreferredSizeWidget appBar(Color bgColor, String title) {
     title: Text(title),
     actions: [
       linkButton(Icons.code, 'https://github.com/henry-h22'),
+      linkButton(Icons.my_library_music_outlined, 'https://www.youtube.com/channel/UCRcSHcI9-7js9dSzm8Lf72w'),
       linkButton(Icons.school_sharp, 'https://www.linkedin.com/in/henryheyden22/'),
     ],
   );
