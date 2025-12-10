@@ -18,39 +18,66 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    return OrientationBuilder(
+  builder: (context, orientation) {
     return SelectionArea(
       child: Scaffold(
         appBar: appBar(Theme.of(context).colorScheme.inversePrimary, widget.title),
-        body: Row(
-          children: <Widget>[
-            Expanded(
-              flex: 1,
-              child: sideBar(context)
-            ),
-            Expanded(
-              flex: 3,
-              child: mainBody(context)
-            )
-          ],
-        )
+        body: orientation == Orientation.landscape ? 
+          Row(children: bars(context, orientation == Orientation.landscape)) : 
+          Column(children: bars(context, orientation == Orientation.landscape))
       )
     );
+   });
   }
 
-  Widget sideBar(BuildContext context) {
+  List<Widget> bars(BuildContext context, bool horizontal) {
+    return <Widget>[
+      Expanded(
+        flex: 1,
+        child: infoBar(context, horizontal: horizontal)
+      ),
+      Expanded(
+        flex: 3,
+        child: mainBody(context)
+      )
+    ];
+  }
+
+  Widget infoBar(BuildContext context, {bool horizontal = true}) {
     return Container(
       padding: EdgeInsets.all(22.0),
       color: Theme.of(context).focusColor,
-      child: Column(
+      child: horizontal ? sideBar(context) : topBar(context)
+    );
+  }
+
+  /// Realization of infoBar if we're in landscape/desktop orientation
+  Widget sideBar(BuildContext context) {
+    return Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           circularPicture,
           sizedText('Henry Heyden', size: 40),
           sizedText('[ˈhɛnɹi ˈhe͡ɪdⁿ]'),
-          sizedText('hheyden [æt̚] macalester [dɑt̚] edu', size: 14),
+          sizedText('hheyden [æt̚] macalester [dɑt̚] edu', size: 14)
         ],
-      )
-    );
+      );
+  }
+
+  /// Realization of infoBar if we're in portrait/mobile orientation
+  Widget topBar(BuildContext context) {
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          circularPicture,
+          Column(children: <Widget>[
+            sizedText('Henry Heyden', size: 40),
+            sizedText('[ˈhɛnɹi ˈhe͡ɪdⁿ]'),
+            sizedText('hheyden [æt̚] macalester [dɑt̚] edu', size: 14)
+          ]),
+        ],
+      );
   }
 
   Widget mainBody(BuildContext context) {
