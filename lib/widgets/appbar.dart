@@ -7,7 +7,7 @@ PreferredSizeWidget appBar(Color bgColor, String title) {
     title: Text(title),
     actions: [
       linkButton(Icons.code, 'https://github.com/henry-h22'),
-      const SizedBox(width: 22)
+      linkButton(Icons.school_sharp, 'https://www.linkedin.com/in/henryheyden22/'),
     ],
   );
 }
