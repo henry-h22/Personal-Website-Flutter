@@ -59,7 +59,8 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          bioCard(context)
+          SizedBox(height: 45,),
+          bioCard(context),
         ],
       ),
     );
