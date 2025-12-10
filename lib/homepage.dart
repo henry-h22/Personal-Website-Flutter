@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heyden_site/widgets/appbar.dart';
+import 'package:heyden_site/widgets/biocard.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -26,7 +27,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Expanded(
             flex: 3,
-            child: const SizedBox(),
+            child: mainBody(context)
           )
         ],
       )
@@ -46,5 +47,16 @@ class _HomePageState extends State<HomePage> {
       )
     );
   }
-}
 
+  Widget mainBody(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(22.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          bioCard(context)
+        ],
+      ),
+    );
+  }
+}
