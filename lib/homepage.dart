@@ -18,15 +18,32 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar(Theme.of(context).colorScheme.inversePrimary, widget.title),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            circularPicture,
-            const Text('Henry Heyden'),
-          ],
-        ),
-      ),
+      body: Row(
+        children: <Widget>[
+          Expanded(
+            flex: 1,
+            child: sideBar(context)
+          ),
+          Expanded(
+            flex: 3,
+            child: const SizedBox(),
+          )
+        ],
+      )
+    );
+  }
+
+  Widget sideBar(BuildContext context) {
+    return Container(
+      color: Theme.of(context).focusColor,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          const SizedBox(height: 22),
+          circularPicture,
+          const Text('Henry Heyden'),
+        ],
+      )
     );
   }
 }
