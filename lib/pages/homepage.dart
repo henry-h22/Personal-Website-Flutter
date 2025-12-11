@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
         Expanded(flex: 1, child: Center(child: circularPicture)),
         Expanded(flex: 2, child: Column(mainAxisAlignment: MainAxisAlignment.center, 
           children: <Widget>[
-            sizedText('Henry Heyden', size: 40),
+            sizedText('Henry Heyden', size: 22),
             sizedText('[ˈhɛnɹi ˈhe͡ɪdⁿ]'),
             sizedText('hheyden [æt̚] macalester [dɑt̚] edu', size: 14)
         ])),
