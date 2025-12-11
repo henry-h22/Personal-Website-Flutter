@@ -19,16 +19,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return OrientationBuilder(
-  builder: (context, orientation) {
-    return SelectionArea(
-      child: Scaffold(
-        appBar: appBar(Theme.of(context).colorScheme.inversePrimary, widget.title),
-        body: orientation == Orientation.landscape ? 
-          Row(children: bars(context, orientation == Orientation.landscape)) : 
-          Column(children: bars(context, orientation == Orientation.landscape))
-      )
+      builder: (context, orientation) {
+        return SelectionArea(
+          child: Scaffold(
+            appBar: appBar(Theme.of(context).colorScheme.inversePrimary, widget.title),
+            body: orientation == Orientation.landscape ? 
+              Row(children: bars(context, orientation == Orientation.landscape)) : 
+              Column(children: bars(context, orientation == Orientation.landscape))
+          )
+        );
+      }
     );
-   });
   }
 
   List<Widget> bars(BuildContext context, bool horizontal) {
@@ -46,7 +47,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget infoBar(BuildContext context, {bool horizontal = true}) {
     return Container(
-      padding: EdgeInsets.all(22.0),
+      padding: EdgeInsets.all(7.2),
       color: Theme.of(context).focusColor,
       child: horizontal ? sideBar(context) : topBar(context)
     );
@@ -68,16 +69,17 @@ class _HomePageState extends State<HomePage> {
   /// Realization of infoBar if we're in portrait/mobile orientation
   Widget topBar(BuildContext context) {
     return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          circularPicture,
-          Column(children: <Widget>[
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Expanded(flex: 1, child: Center(child: circularPicture)),
+        Expanded(flex: 2, child: Column(mainAxisAlignment: MainAxisAlignment.center, 
+          children: <Widget>[
             sizedText('Henry Heyden', size: 40),
             sizedText('[ˈhɛnɹi ˈhe͡ɪdⁿ]'),
             sizedText('hheyden [æt̚] macalester [dɑt̚] edu', size: 14)
-          ]),
-        ],
-      );
+        ])),
+      ],
+    );
   }
 
   Widget mainBody(BuildContext context) {
